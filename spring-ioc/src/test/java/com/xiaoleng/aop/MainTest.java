@@ -1,8 +1,8 @@
-package com.xiaoleng.ioc;
+package com.xiaoleng.aop;
 
 
-import com.xiaoleng.ioc.config.MainConfig;
-import com.xiaoleng.ioc.domain.OrderDto;
+import com.xiaoleng.aop.config.MainConfig;
+import com.xiaoleng.aop.domain.OrderDto;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
