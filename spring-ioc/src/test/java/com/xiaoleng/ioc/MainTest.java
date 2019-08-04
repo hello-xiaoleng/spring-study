@@ -1,4 +1,4 @@
-package com.xiaoleng.aop;
+package com.xiaoleng.ioc;
 
 
 import com.xiaoleng.aop.config.MainConfig;
