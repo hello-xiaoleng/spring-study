@@ -2,7 +2,7 @@ package com.xiaoleng.aop;
 
 
 import com.xiaoleng.aop.config.MainConfig;
-import com.xiaoleng.aop.service.CalculateServiceImpl;
+import com.xiaoleng.aop.service.CalculatorServiceImpl;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -16,7 +16,7 @@ public class MainTest {
         AnnotationConfigApplicationContext applicationContext =
                 new AnnotationConfigApplicationContext(MainConfig.class);
 
-        CalculateServiceImpl calculateService = applicationContext.getBean(CalculateServiceImpl.class);
+        CalculatorServiceImpl calculateService = applicationContext.getBean(CalculatorServiceImpl.class);
 
         BigDecimal result = calculateService.div(new BigDecimal("100"), new BigDecimal("50"));
 

@@ -9,14 +9,14 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class CalculateAspect {
+public class CalculatorAspect {
 
 
     /**
      * 定义一个切入点
      */
     @Pointcut("execution" +
-            "(public java.math.BigDecimal com.xiaoleng.aop.service.CalculateServiceImpl.div(..))")
+            "(public java.math.BigDecimal com.xiaoleng.aop.service.CalculatorServiceImpl.div(..))")
     public void pointCut() {
 
     }

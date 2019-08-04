@@ -7,7 +7,7 @@ import java.math.MathContext;
 
 
 @Service
-public class CalculateServiceImpl {
+public class CalculatorServiceImpl {
 
 
     public BigDecimal div(BigDecimal i, BigDecimal j) {
