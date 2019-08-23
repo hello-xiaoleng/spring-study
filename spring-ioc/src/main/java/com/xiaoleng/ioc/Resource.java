@@ -24,7 +24,7 @@ public class Resource {
             if (b1 == -1) {
                 break;
             }
-            result.append(new String(by));
+            result.append(new String(by, 0, b1));
         }
         System.out.println(result.toString());
     }
