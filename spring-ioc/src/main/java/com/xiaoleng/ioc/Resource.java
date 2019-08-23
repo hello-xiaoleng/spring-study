@@ -20,7 +20,6 @@ public class Resource {
         StringBuilder result = new StringBuilder();
         while (true) {
             int b1 = fileInputStream.read(by);
-            System.out.println(b1);
             if (b1 == -1) {
                 break;
             }
