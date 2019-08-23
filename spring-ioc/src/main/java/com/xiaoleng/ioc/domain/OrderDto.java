@@ -1,4 +1,4 @@
-package com.xiaoleng.aop.domain;
+package com.xiaoleng.ioc.domain;
 
 
 import org.springframework.stereotype.Component;

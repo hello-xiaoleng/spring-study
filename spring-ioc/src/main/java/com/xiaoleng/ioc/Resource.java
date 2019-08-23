@@ -1,4 +1,4 @@
-package com.xiaoleng.aop;
+package com.xiaoleng.ioc;
 
 import org.springframework.core.io.ClassPathResource;
 
@@ -11,7 +11,7 @@ public class Resource {
 
     public static void main(String[] args) throws IOException {
 
-        ClassPathResource resource = new ClassPathResource("/com/xiaoleng/aop/application.properties");
+        ClassPathResource resource = new ClassPathResource("/com/xiaoleng/ioc/application.properties");
 
         File file = resource.getFile();
         FileInputStream fileInputStream = new FileInputStream(file);

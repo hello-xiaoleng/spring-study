@@ -1,4 +1,4 @@
-package com.xiaoleng.aop.config;
+package com.xiaoleng.ioc.config;
 
 
 import org.springframework.context.annotation.ComponentScan;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
 @EnableAspectJAutoProxy
-@ComponentScan({"com.xiaoleng.aop"})
+@ComponentScan({"com.xiaoleng.ioc"})
 public class MainConfig {
 
 

@@ -1,4 +1,4 @@
-package com.xiaoleng.aop.config;
+package com.xiaoleng.ioc.config;
 
 
 import org.springframework.context.annotation.ComponentScan;
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2019/08/21
  */
 @Configuration
-@ComponentScan({"com.xiaoleng.aop"})
+@ComponentScan({"com.xiaoleng.ioc"})
 public class MainConfig {
 
 

@@ -1,8 +1,8 @@
-package com.xiaoleng.aop;
+package com.xiaoleng.ioc;
 
 
-import com.xiaoleng.aop.config.MainConfig;
-import com.xiaoleng.aop.service.CalculatorServiceImpl;
+import com.xiaoleng.ioc.config.MainConfig;
+import com.xiaoleng.ioc.service.CalculatorServiceImpl;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

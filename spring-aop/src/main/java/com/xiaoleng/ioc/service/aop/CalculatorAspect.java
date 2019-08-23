@@ -1,4 +1,4 @@
-package com.xiaoleng.aop.service.aop;
+package com.xiaoleng.ioc.service.aop;
 
 
 import com.alibaba.fastjson.JSON;
@@ -16,7 +16,7 @@ public class CalculatorAspect {
      * 定义一个切入点
      */
     @Pointcut("execution" +
-            "(public java.math.BigDecimal com.xiaoleng.aop.service.CalculatorServiceImpl.div(..))")
+            "(public java.math.BigDecimal com.xiaoleng.ioc.service.CalculatorServiceImpl.div(..))")
     public void pointCut() {
 
     }
