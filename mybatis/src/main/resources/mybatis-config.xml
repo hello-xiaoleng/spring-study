@@ -23,6 +23,7 @@
     <mappers>
         <mapper resource="sqlMapper/UserMapper.xml"/>
         <mapper resource="sqlMapper/TUserMapper.xml"/>
+        <mapper resource="sqlMapper/TPositionMapper.xml"/>
     </mappers>
 
 </configuration>
