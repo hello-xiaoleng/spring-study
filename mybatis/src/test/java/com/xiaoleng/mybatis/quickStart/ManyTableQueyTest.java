@@ -6,10 +6,12 @@ import com.xiaoleng.mybatis.common.mapper.TUserMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
+import java.util.List;
+
 public class ManyTableQueyTest {
 
     @Test
-    public void queryTest() {
+    public void oneToOneTest() {
 
         SqlSession sqlSession = MybatisSqlSessionFactory.getSqlSession();
 
@@ -22,6 +24,23 @@ public class ManyTableQueyTest {
         }
 
         System.out.println(userAndPostion);
+
+    }
+
+    @Test
+    public void oneToManyTest() {
+
+        SqlSession sqlSession = MybatisSqlSessionFactory.getSqlSession();
+
+        List<TUser> userAndPostionList;
+        try {
+            TUserMapper mapper = sqlSession.getMapper(TUserMapper.class);
+            userAndPostionList = mapper.findUserAndJobHistoryBy(null);
+        } finally {
+            sqlSession.close();
+        }
+
+        System.out.println(userAndPostionList);
 
     }
 

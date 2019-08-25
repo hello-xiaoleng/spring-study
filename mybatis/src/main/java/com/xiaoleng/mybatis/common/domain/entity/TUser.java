@@ -6,12 +6,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.List;
 
 
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+
 public class TUser implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -32,5 +34,7 @@ public class TUser implements Serializable {
     private Integer positionId;
 
     private TPosition tPosition;
+
+    private List<TJobHistory> jobHistoryList;
 
 }

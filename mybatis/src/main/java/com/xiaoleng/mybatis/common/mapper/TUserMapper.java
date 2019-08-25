@@ -3,6 +3,8 @@ package com.xiaoleng.mybatis.common.mapper;
 import com.xiaoleng.mybatis.common.domain.entity.TUser;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 public interface TUserMapper {
 
     int deleteByPrimaryKey(Integer id);
@@ -18,4 +20,6 @@ public interface TUserMapper {
     int updateByPrimaryKey(TUser record);
 
     TUser findUserAndPositionByPrimaryKey(@Param("id") Integer userId);
+
+    List<TUser> findUserAndJobHistoryBy(@Param("id") Integer userId);
 }

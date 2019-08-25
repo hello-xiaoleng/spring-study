@@ -27,6 +27,21 @@
     </resultMap>
 
 
+    <resultMap id="UserAndJobHistoryResultMap" type="com.xiaoleng.mybatis.common.domain.entity.TUser"
+               extends="BaseResultMap">
+
+        <collection property="jobHistoryList"
+                    ofType="com.xiaoleng.mybatis.common.domain.entity.TJobHistory"
+                    columnPrefix="t_job_history_">
+            <id column="id" jdbcType="INTEGER" property="id"/>
+            <result column="user_id" jdbcType="INTEGER" property="userId"/>
+            <result column="comp_name" jdbcType="VARCHAR" property="compName"/>
+            <result column="years" jdbcType="INTEGER" property="years"/>
+            <result column="title" jdbcType="VARCHAR" property="title"/>
+        </collection>
+    </resultMap>
+
+
     <sql id="Base_Column_List">
     id, user_name, real_name, sex, mobile, email, note, position_id
   </sql>
@@ -160,5 +175,29 @@
        inner join t_position tp on tu.position_id = tp.id
      where tu.id = #{id};
   </select>
+
+
+    <select id="findUserAndJobHistoryBy" parameterType="java.lang.Integer" resultMap="UserAndJobHistoryResultMap">
+        select tu.id,
+        tu.user_name,
+        tu.real_name,
+        tu.sex,
+        tu.mobile,
+        tu.email,
+        tu.note,
+        tu.position_id,
+        tj.id as t_job_history_id,
+        tj.user_id as t_job_history_user_id,
+        tj.comp_name as t_job_history_comp_name,
+        tj.years as t_job_history_years,
+        tj.title as t_job_history_title
+        from t_user tu
+        left join t_job_history tj on tu.id = tj.user_id
+        <where>
+            <if test="id != null">
+                and tu.id = #{id}
+            </if>
+        </where>
+    </select>
 
 </mapper>
