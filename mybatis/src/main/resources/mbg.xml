@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <!--加载配置文件-->
+    <properties resource="datasource.properties"/>
+
+    <!--数据库驱动 可以不写-->
+
+    <!--生成一个po对象的环境
+       flat 所有字段都生成在一个对象里面
+    -->
+    <context id="MySqlContext" targetRuntime="MyBatis3" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <!--生成Java文件的编码-->
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!-- 为模型生成序列化方法-->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <!-- 为生成的Java模型创建一个toString方法 -->
+        <!--<plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>-->
+
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="false"/>
+            <!--阻止注释中包含时间戳 true 是,false：否-->
+            <property name="suppressDate" value="true"/>
+            <!--注释中是否包含注释中的信息 true 是，false 否-->
+            <property name="addRemarkComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="${jdbc.driverClass}"
+                        connectionURL="${jdbc.connectionURL}"
+                        userId="${jdbc.userName}"
+                        password="${jdbc.password}">
+            <!--解决mysql驱动升级到8.0后不生成指定数据库代码的问题-->
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="com.xiaoleng.mybatis.common.domain.entity"
+                            targetProject="mybatis/src/main/java">
+            <!--生成的类继承一个父类-->
+            <!--<property name = "root" value=""/>-->
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="sqlMapper" targetProject="mybatis/src/main/java"/>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.xiaoleng.mybatis.common.mapper"
+                             targetProject="mybatis/src/main/java"/>
+
+
+        <!--生成全部表tableName设为%-->
+        <table tableName="t_user">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+    </context>
+</generatorConfiguration>

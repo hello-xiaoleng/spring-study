@@ -1,4 +1,4 @@
-package com.xiaoleng.mybatis.domain;
+package com.xiaoleng.mybatis.common.domain.entity;
 
 
 import lombok.AllArgsConstructor;

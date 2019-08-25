@@ -1,6 +1,6 @@
 package com.xiaoleng.mybatis.quickStart;
 
-import com.xiaoleng.mybatis.domain.User;
+import com.xiaoleng.mybatis.common.domain.entity.User;
 import com.xiaoleng.mybatis.quickStart.dao.UserDao;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;

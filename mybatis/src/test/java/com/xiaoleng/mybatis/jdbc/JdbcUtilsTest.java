@@ -1,6 +1,6 @@
 package com.xiaoleng.mybatis.jdbc;
 
-import com.xiaoleng.mybatis.domain.User;
+import com.xiaoleng.mybatis.common.domain.entity.User;
 import org.junit.Test;
 
 import java.util.List;
