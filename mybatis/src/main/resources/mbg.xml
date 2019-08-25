@@ -26,7 +26,7 @@
 
         <commentGenerator>
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
-            <property name="suppressAllComments" value="false"/>
+            <property name="suppressAllComments" value="true"/>
             <!--阻止注释中包含时间戳 true 是,false：否-->
             <property name="suppressDate" value="true"/>
             <!--注释中是否包含注释中的信息 true 是，false 否-->
@@ -45,18 +45,21 @@
                             targetProject="mybatis/src/main/java">
             <!--生成的类继承一个父类-->
             <!--<property name = "root" value=""/>-->
-            <property name="enableSubPackages" value="true"/>
-            <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="sqlMapper" targetProject="mybatis/src/main/java"/>
+        <sqlMapGenerator targetPackage="sqlMapper" targetProject="mybatis/src/main/resources"/>
 
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.xiaoleng.mybatis.common.mapper"
                              targetProject="mybatis/src/main/java"/>
 
 
         <!--生成全部表tableName设为%-->
-        <table tableName="t_user">
+        <table tableName="t_user"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
 
