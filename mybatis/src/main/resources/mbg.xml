@@ -54,7 +54,7 @@
 
 
         <!--生成全部表tableName设为%-->
-        <table tableName="t_user"
+        <table tableName="%"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
