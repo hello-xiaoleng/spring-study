@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poems createYear="2019">
+    <poem>
+        <title>春晓</title>
+        <author authorInfo="字浩然/号孟山人">孟浩然</author>
+        <content>春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。</content>
+    </poem>
+    <poem>
+        <title>望庐山瀑布</title>
+        <author  authorInfo="字太白/号青莲居士">李白</author>
+        <content>日照香炉生紫烟，遥看瀑布挂前川。飞流直下三千尺，疑是银河落九天。</content>
+    </poem>
+</poems>
