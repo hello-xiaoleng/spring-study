@@ -9,18 +9,28 @@ public class JavaTimeTask {
 
 
     public static void main(String[] args) {
-        Timer timer1 = new Timer();
+        Timer timer = new Timer();
 
-        TimerTask timerTask = new TimerTask() {
+        TimerTask timerTask1 = new TimerTask() {
             private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
             @Override
             public void run() {
-                System.out.println("我在" + LocalDateTime.now().format(dateTimeFormatter) + ",执行了！");
+                System.out.println("timerTask1在" + LocalDateTime.now().format(dateTimeFormatter) + ",执行了！");
+            }
+        };
+
+        TimerTask timerTask2 = new TimerTask() {
+            private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+            @Override
+            public void run() {
+                System.out.println("timerTask2在" + LocalDateTime.now().format(dateTimeFormatter) + ",执行了！");
             }
         };
         LocalDateTime customerDateTime = LocalDateTime.of(2019,9,11,15,21,0);
-        timer1.schedule(timerTask,1000,1000);
+        timer.schedule(timerTask1,1000,1000);
+        timer.scheduleAtFixedRate(timerTask2,1000,2000);
 
     }
 
