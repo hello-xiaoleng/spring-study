@@ -1,4 +1,4 @@
-package com.xiaoleng.java.shiftCalculation;
+package com.xiaoleng.java.calculation;
 
 public class MainClass {
 
