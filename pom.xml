@@ -11,9 +11,9 @@
     <modules>
         <module>spring-ioc</module>
         <module>spring-aop</module>
-        <module>concurrency</module>
         <module>mybatis</module>
         <module>java</module>
+        <module>spring-integration</module>
     </modules>
 
     <properties>
