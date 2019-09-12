@@ -1,4 +1,4 @@
-package com.xiaoleng.consumerProducer;
+package com.xiaoleng.java.concurrency.consumerProducer;
 
 import java.util.concurrent.TimeUnit;
 
