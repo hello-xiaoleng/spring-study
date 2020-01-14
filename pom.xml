@@ -13,7 +13,6 @@
         <module>spring-aop</module>
         <module>mybatis</module>
         <module>java</module>
-        <module>spring-integration</module>
     </modules>
 
     <properties>
@@ -29,8 +28,6 @@
         <mybatis.version>2.1.0</mybatis.version>
         <junit.version>4.12</junit.version>
     </properties>
-
-
 
 
     <dependencyManagement>
@@ -52,12 +49,6 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>1.2.59</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.aspectj</groupId>
-                <artifactId>aspectjrt</artifactId>
-                <version>1.9.4</version>
             </dependency>
 
             <dependency>
