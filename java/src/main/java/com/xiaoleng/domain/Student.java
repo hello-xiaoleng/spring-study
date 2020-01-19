@@ -11,7 +11,9 @@ import lombok.Data;
 @Data
 public class Student {
     private String id;
+
     private Course course;
+
     private double score;
 
     public Student() {
@@ -29,6 +31,9 @@ public class Student {
     }
 
     public enum Course {
-        LANGUAGE, MATHEMATICS, ENGLISH, TOTAL
+        /**
+         * 课程
+         */
+        LANGUAGE, MATHEMATICS, ENGLISH
     }
 }
