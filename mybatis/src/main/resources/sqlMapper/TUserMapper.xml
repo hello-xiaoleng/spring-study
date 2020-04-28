@@ -43,18 +43,27 @@
 
 
     <sql id="Base_Column_List">
-    id, user_name, real_name, sex, mobile, email, note, position_id
-  </sql>
+        id, user_name, real_name, sex, mobile, email, note, position_id
+    </sql>
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from t_user
         where id = #{id,jdbcType=INTEGER}
     </select>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user
+    </select>
+
+
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from t_user
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
+        delete
+        from t_user
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
     <insert id="insert" parameterType="com.xiaoleng.mybatis.common.domain.entity.TUser">
         <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
             SELECT LAST_INSERT_ID()
@@ -146,35 +155,35 @@
         where id = #{id,jdbcType=INTEGER}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.xiaoleng.mybatis.common.domain.entity.TUser">
-    update t_user
-    set user_name = #{userName,jdbcType=VARCHAR},
-      real_name = #{realName,jdbcType=VARCHAR},
-      sex = #{sex,jdbcType=TINYINT},
-      mobile = #{mobile,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR},
-      note = #{note,jdbcType=VARCHAR},
-      position_id = #{positionId,jdbcType=INTEGER}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+        update t_user
+        set user_name   = #{userName,jdbcType=VARCHAR},
+            real_name   = #{realName,jdbcType=VARCHAR},
+            sex         = #{sex,jdbcType=TINYINT},
+            mobile      = #{mobile,jdbcType=VARCHAR},
+            email       = #{email,jdbcType=VARCHAR},
+            note        = #{note,jdbcType=VARCHAR},
+            position_id = #{positionId,jdbcType=INTEGER}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
 
 
     <select id="findUserAndPositionByPrimaryKey" parameterType="java.lang.Integer"
             resultMap="UserAndPositionResultMap">
-      select tu.id,
-       tu.user_name,
-       tu.real_name,
-       tu.sex,
-       tu.mobile,
-       tu.email,
-       tu.note,
-       tu.position_id,
-       tp.id as position_id,
-       tp.post_name as position_post_name,
-       tp.note as position_note
-     from t_user tu
-       inner join t_position tp on tu.position_id = tp.id
-     where tu.id = #{id};
-  </select>
+        select tu.id,
+               tu.user_name,
+               tu.real_name,
+               tu.sex,
+               tu.mobile,
+               tu.email,
+               tu.note,
+               tu.position_id,
+               tp.id        as position_id,
+               tp.post_name as position_post_name,
+               tp.note      as position_note
+        from t_user tu
+                 inner join t_position tp on tu.position_id = tp.id
+        where tu.id = #{id};
+    </select>
 
 
     <select id="findUserAndJobHistoryBy" parameterType="java.lang.Integer" resultMap="UserAndJobHistoryResultMap">

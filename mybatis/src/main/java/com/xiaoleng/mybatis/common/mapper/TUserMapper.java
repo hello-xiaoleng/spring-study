@@ -15,6 +15,8 @@ public interface TUserMapper {
 
     TUser selectByPrimaryKey(Integer id);
 
+    List<TUser> findAll();
+
     int updateByPrimaryKeySelective(TUser record);
 
     int updateByPrimaryKey(TUser record);
