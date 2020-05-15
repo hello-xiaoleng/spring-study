@@ -1,7 +1,6 @@
 package com.xiaoleng.mybatis.springMybatis;
 
 
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.xiaoleng.mybatis.common.domain.entity.TUser;
@@ -24,7 +23,7 @@ public class SpringContextTest {
     @Test
     public void testMybatis() {
 
-        Page<TUser> page = PageHelper.startPage(1, 1000);
+        PageHelper.startPage(1, 1000);
 
         List<TUser> all = tUserMapper.findAll();
 
